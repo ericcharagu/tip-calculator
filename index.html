@@ -1,10 +1,12 @@
+</php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="icon"
       type="image/png"
@@ -12,8 +14,30 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="index.css">
-
+    <script>
+      function tipReader(){
+        if (typeof(Storage)!=="undefined"){
+          if (sessionStorage.tipPercent){
+            sessionStorage.tipPercent=document.getElementBy("tip-amount").value;
+            console.log(sessionStorage.tipPercent)
+          }
+        }
+      }
+      //$_SESSION["tip"] = document.getElementById(tip-amount);
+      function reset(){
+        document.getElementById("tip-amount").innerHTML="$0.00";
+      }
+      function tipAmount(){
+        var tip= Number(sessionStorage.tipPercent);
+        var bill=Number(document.getElementById("bill"));
+        var people=document.getElementById("people")
+        var totalTip= (tip*0.01)* bill;
+        var tipPerson=totalTip/people
+        console.log(totalTip,tipPerson)
+      } 
+      </script>
     <title>Frontend Mentor | Tip calculator app</title>
+
   </head>
   <body>
 
@@ -23,31 +47,31 @@
           <div class="row" id="userInput">
             <div class="col-md-6">
               <label>Bill</label>
-              <input name="amount" type="number"/>
+              <input  type="number" id="bill" placeholder="$0.00"/>
               <label>Select Tip %</label>
               <div class="btn-group">
                 
-                <button type="button" id="tip-btn">
+                <button type="button" id="tip-btn" value="5" onclick="tipReader()">
                    5% 
                    </button>
-                   <button type="button" id="tip-btn">
+                   <button type="button" id="tip-btn" value="10" onclick="tipReader()">
                     10%
                   </button>
-                  <button type="button" id="tip-btn">
+                  <button type="button" id="tip-btn" value="15"onclick="tipReader()">
                     15%
                   </button>
-                  <button type="button" id="tip-btn">
+                  <button type="button" id="tip-btn" val="25%"onclick="tipReader()">
                     25%
                   </button>
 
-                  <button type="button" id="tip-btn">
+                  <button type="button" id="tip-btn" val="50"onclick="tipReader()">
                     50%
                   </button>
-                  <input type="number" id="tip-btn" placeholder="Enter value"/>
+                  <input type="number" id="tip-btn" value="0" onchange="tipReader()" placeholder="Enter value"/>
                   
               </div>
               <label>Number of people</label>
-              <input type="number" />
+              <input type="number" id="people" placeholder="0" />
             </div>
             <div class="col-md-6" id="amount-display">
               <div class="input-group mb-3">
@@ -61,7 +85,7 @@
                 <input type="number" id="tip-amount" placeholder="$0.00"> 
               
               </div>
-              <button type="button" id="reset">RESET</button>
+              <button type="button" id="reset" onClick="reset()">RESET</button>
             </div>
 
           </row>
@@ -77,4 +101,5 @@
       >. Coded by <a href="#">Eric_Charagu</a>.
     </div>
   </body>
+  
 </html>
