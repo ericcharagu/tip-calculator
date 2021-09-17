@@ -67,14 +67,14 @@
             <div class="col-md-6" id="amount-display">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="tipAmount" onchange="tipReader()">Tip Amount<br>/person</span>
+                  <span class="input-group-text"  >Tip Amount<br>/person</span>
                   
                 </div>
-                <input type="number" id="tipAmount" placeholder="$0.00"> 
+                <input type="number" id="tipAmount" onchange="tipReader()" placeholder="$0.00"> 
                 <div class="input-group-prepend">
                   <span class="input-group-text" >Total<br>/person</span>
                 </div>
-                <input type="number" id="personAmount" placeholder="$0.00"> 
+                <input type="number" id="personAmount" onchange="tipReader()" placeholder="$0.00"> 
               
               </div>
               <button type="button" id="reset" onClick="reset()">RESET</button>
