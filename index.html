@@ -55,11 +55,11 @@
                   <span class="input-group-text" >Tip Amount<br>/person</span>
                   
                 </div>
-                <input type="number" id="tipAmount" onchange="tipReader()"  placeholder="$0.00"> 
+                <output type="number" id="tipAmount" onchange="tipReader()"  placeholder="$0.00"> 
                 <div class="input-group-prepend">
                   <span class="input-group-text"  >Total<br>/person</span>
                 </div>
-                <input type="number" id="personAmount" onchange="tipReader()" placeholder="$0.00"> 
+                <output type="number" id="personAmount" onchange="tipReader()" placeholder="$0.00"> 
               
               </div>
               <button type="button" id="reset" onClick="reset()">RESET</button>
@@ -88,10 +88,10 @@
       var people=parseInt(document.getElementById("people").value);       
       var totalTip=(tipVal*0.01)* bill;
       var tipPerson = totalTip/people;
-      document.getElementById("tipAmount").innerHTML=tipPerson;
+      document.getElementById("tipAmount").value=tipPerson;
       var totalAmount= totalTip+bill;
       var amountPerson=totalAmount/people;
-      document.getElementById("personAmount").innerHTML=amountPerson;
+      document.getElementById("personAmount").value=amountPerson;
       console.log(tipVal, people, bill,totalTip,tipPerson);         
 
         }      
