@@ -94,23 +94,18 @@
     </div>
     <script>
        function tipReader(){
-        var tipVal=parseFloat(document.getElementById("tipBtn").value); 
-        
-    
+        var tipVal=parseFloat(document.getElementById("tipBtn").value);     
           //var bill=10;
           //var people= 2;
           var bill=parseFloat(document.getElementById("bill").value);
-          var people=parseInt(document.getElementById("people").value);
-          var tipVal = 4;
-
-          //var totalTip=(tipVal*0.01)* bill;
+          var people=parseInt(document.getElementById("people").value);       
+          var totalTip=(tipVal*0.01)* bill;
           var tipPerson = totalTip/people;
           document.getElementById("tipAmount").innerHTML=tipPerson;
           var totalAmount= totalTip+bill;
           var amountPerson=totalAmount/people;
           document.getElementById("personAmount").innerHTML=amountPerson;
-          console.log(totalTip,tipPerson)
-          
+          console.log(totalTip,tipPerson);         
 
          }
          
