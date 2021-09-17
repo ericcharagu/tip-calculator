@@ -94,10 +94,11 @@
     </div>
     <script>
        function tipReader(){
-        var tipVal=parseFloat(document.getElementById("tipBtn").value);   
+        var tipVal=parseFloat(document.getElementById("tipBtn").value); 
+        console.log(tipVal)  
        }
        setTimeout(totalCash, 2000); 
-         function totalCash(){
+         function totalCash(tipVal){
           var bill=10;
           var people= 2;
           //var bill=parseFloat(document.getElementById("bill"));
@@ -110,7 +111,7 @@
           var amountPerson=totalAmount/people;
           document.getElementById("personAmount").innerHTML=amountPerson;
           console.log(totalTip,tipPerson)
-          console.log(tipVal)
+          
 
          }
          
