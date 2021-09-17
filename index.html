@@ -67,13 +67,14 @@
             <div class="col-md-6" id="amount-display">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Tip Amount<br>/person</span>
+                  <span class="input-group-text" id="tipAmount" onchange="tipReader()">Tip Amount<br>/person</span>
+                  
                 </div>
-                <input type="number" id="tip-amount" placeholder="$0.00"> 
+                <input type="number" id="tipAmount" placeholder="$0.00"> 
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Total<br>/person</span>
+                  <span class="input-group-text" >Total<br>/person</span>
                 </div>
-                <input type="number" id="tip-amount" placeholder="$0.00"> 
+                <input type="number" id="personAmount" placeholder="$0.00"> 
               
               </div>
               <button type="button" id="reset" onClick="reset()">RESET</button>
@@ -93,15 +94,24 @@
     </div>
     <script>
        function tipReader(){
-        var tipVal=document.getElementById("tipBtn").value;
-        var bill=Number(document.getElementById("bill"));
-        var people=document.getElementById("people")
-        var totalTip= (tipVal*0.01)* bill;
-        var tipPerson=totalTip/people
+        var tipVal=parseFloat(document.getElementById("tipBtn").value);       
+        var bill=10;
+        var people= 2;
+        //var bill=parseFloat(document.getElementById("bill"));
+        //var people=parseInt(document.getElementById("people"));
+
+        var totalTip=(tipVal*0.01)* bill;
+        var tipPerson = totalTip/people;
+        document.getElementById("tipAmount").innerHTML=tipPerson;
+        var totalAmount= totalTip+bill;
+        var amountPerson=totalAmount/people;
+        document.getElementById("personAmount").innerHTML=amountPerson;
         console.log(totalTip,tipPerson)
         console.log(tipVal)
+       }
         
-      }
+        
+      
     </script>
   </body>
   
