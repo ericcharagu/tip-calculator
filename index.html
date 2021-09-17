@@ -12,21 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="index.css">
-    <script>
-     
-      //$_SESSION["tip"] = document.getElementById(tip-amount);
- /*      function reset(){
-        document.getElementById("tip-amount").innerHTML="$0.00";
-      }
-      function tipAmount(){
-        var tip= Number(sessionStorage.tipPercent);
-        var bill=Number(document.getElementById("bill"));
-        var people=document.getElementById("people")
-        var totalTip= (tip*0.01)* bill;
-        var tipPerson=totalTip/people
-        console.log(totalTip,tipPerson)
-      }  */
-      </script>
+  
     <title>Frontend Mentor | Tip calculator app</title>
 
   </head>
@@ -67,14 +53,14 @@
             <div class="col-md-6" id="amount-display">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Tip Amount<br>/person</span>
+                  <span class="input-group-text" id="tipAmount" onchange="tipReader()"">Tip Amount<br>/person</span>
                   
                 </div>
-                <input type="number" id="tipAmount" onchange="tipReader()" placeholder="$0.00"> 
+                <input type="number"  placeholder="$0.00"> 
                 <div class="input-group-prepend">
-                  <span class="input-group-text" >Total<br>/person</span>
+                  <span class="input-group-text" id="personAmount" onchange="tipReader()" >Total<br>/person</span>
                 </div>
-                <input type="number" id="personAmount" onchange="tipReader()" placeholder="$0.00"> 
+                <input type="number"  placeholder="$0.00"> 
               
               </div>
               <button type="button" id="reset" onClick="reset()">RESET</button>
@@ -95,17 +81,17 @@
     <script>
        function tipReader(){
         var tipVal=parseFloat(document.getElementById("tipBtn").value);     
-          var bill=10;
-          var people= 2;
-          //var bill=parseFloat(document.getElementById("bill").value);
-          //var people=parseInt(document.getElementById("people").value);       
-          var totalTip=(tipVal*0.01)* bill;
-          var tipPerson = totalTip/people;
-          document.getElementById("tipAmount").innerHTML=tipPerson;
-          var totalAmount= totalTip+bill;
-          var amountPerson=totalAmount/people;
-          document.getElementById("personAmount").innerHTML=amountPerson;
-          console.log(totalTip,tipPerson);         
+        //var bill=10;
+        //var people= 2;
+        var bill=parseFloat(document.getElementById("bill").value);
+        var people=parseInt(document.getElementById("people").value);       
+        var totalTip=(tipVal*0.01)* bill;
+        var tipPerson = totalTip/people;
+        document.getElementById("tipAmount").innerHTML=tipPerson;
+        var totalAmount= totalTip+bill;
+        var amountPerson=totalAmount/people;
+        document.getElementById("personAmount").innerHTML=amountPerson;
+        console.log(tipVal, people, bill,totalTip,tipPerson);         
 
          }
          
