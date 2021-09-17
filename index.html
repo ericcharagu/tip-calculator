@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,9 +14,10 @@
     <link rel="stylesheet" href="index.css">
     <script>
       function tipReader(){
+        console.log(getElementById("tip-btn").value);
         if (typeof(Storage)!=="undefined"){
           if (sessionStorage.tipPercent){
-            sessionStorage.tipPercent=document.getElementBy("tip-amount").value;
+            sessionStorage.tipPercent=document.getElementBy("tip-btn").value;
             console.log(sessionStorage.tipPercent)
           }
         }
