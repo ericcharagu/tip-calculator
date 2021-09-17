@@ -94,6 +94,11 @@
     <script>
        function tipReader(){
         var tipVal=document.getElementById("tipBtn").value;
+        var bill=Number(document.getElementById("bill"));
+        var people=document.getElementById("people")
+        var totalTip= (tipVal*0.01)* bill;
+        var tipPerson=totalTip/people
+        console.log(totalTip,tipPerson)
         console.log(tipVal)
         
       }
