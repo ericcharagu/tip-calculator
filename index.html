@@ -28,19 +28,19 @@
               <label>Select Tip %</label>
               <div class="btn-group">
                 
-                <button type="button" id="tipBtn" value="5" onclick="tipReader(5)">
+                <button type="button" id="tipBtn" value="5" onclick="tipReader()">
                    5% 
                 </button>
-                <button type="button" id="tipBtn" value="10" onclick="tipReader(10)">
+                <button type="button" id="tipBtn" value="10" onclick="tipReader()">
                   10%
                 </button>
-                <button type="button" id="tipBtn" value="15"onclick="tipReader(15)">
+                <button type="button" id="tipBtn" value="15"onclick="tipReader()">
                   15%
                 </button>
-                <button type="button" id="tipBtn" val="25%"onclick="tipReader(25)">
+                <button type="button" id="tipBtn" val="25%"onclick="tipReader()">
                   25%
                 </button>
-                <button type="button" id="tipBtn" val="50"onclick="tipReader(50)">
+                <button type="button" id="tipBtn" val="50"onclick="tipReader()">
                   50%
                 </button>
                 <input type="number" id="tipBtn" value="0" onchange="tipReader()" placeholder="Enter value"/>
@@ -78,10 +78,10 @@
       >. Coded by <a href="#">Eric_Charagu</a>.
     </div>
     <script>
-    
+
       window.onClick= tipReader;
-      function tipReader(tipVal){
-      //var tipVal=parseFloat(document.getElementById("tipBtn").value);     
+      function tipReader(){
+      var tipVal=parseFloat(document.getElementById("tipBtn").value);     
       //var bill=10;
       //var people= 2;
       var bill=parseFloat(document.getElementById("bill").value);
@@ -92,7 +92,7 @@
       var totalAmount= totalTip+bill;
       var amountPerson=totalAmount/people;
       document.getElementById("personAmount").innerHTML=amountPerson;
-      console.log( people, bill,totalTip,tipPerson);         
+      console.log(tipVal, people, bill,totalTip,tipPerson);         
 
         }      
     </script>
