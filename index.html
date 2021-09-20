@@ -87,11 +87,11 @@
       var bill=parseFloat(document.getElementById("bill").value);
       var people=parseInt(document.getElementById("people").value);       
       var totalTip=(tipVal*0.01)* bill;
-      var tipPerson = totalTip/people;
-      document.getElementById("tipAmount").innerHTML=tipPerson;
+      var tipPerson = totalTip  /people;
+      document.getElementById("tipAmount").value=tipPerson;
       var totalAmount= totalTip+bill;
       var personAmount=totalAmount/people;
-      //document.getElementById("personAmount").innerHTML=personAmount;
+      document.getElementById("personAmount").value=personAmount;
       console.log(tipVal,totalAmount,people,totalTip,tipPerson);         
 
       }      
