@@ -81,17 +81,20 @@
 
       window.onClick= tipReader;
       function tipReader(){
+        //Get variables
       var tipVal=parseFloat(document.getElementById("tipBtn").value);     
-      //var bill=10;
-      //var people= 2;
       var bill=parseFloat(document.getElementById("bill").value);
-      var people=parseInt(document.getElementById("people").value);       
+      var people=parseInt(document.getElementById("people").value);  
+      
+       // Mathematical manipulation
       var totalTip=(tipVal*0.01)* bill;
-      var tipPerson = totalTip  /people;
-      document.getElementById("tipAmount").value=tipPerson;
       var totalAmount= totalTip+bill;
       var personAmount=totalAmount/people;
-      document.getElementById("totalPerson").value=personAmount;
+
+      // Outputs
+      var tipPerson = totalTip  /people;
+      document.getElementById("tipAmount").value=tipPerson.toFixed(2);
+      document.getElementById("totalPerson").value=personAmount.toFixed(2);
       console.log(tipVal,totalAmount,people,totalTip,tipPerson);         
 
       }      
