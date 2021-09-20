@@ -28,19 +28,19 @@
               <label>Select Tip %</label>
               <div class="btn-group">
                 
-                <button type="button" id="tipBtn" value="5" onclick="tipReader()">
+                <button type="button" id="tipBtn" value="5" onclick="tipReader(this.value)">
                    5% 
                 </button>
-                <button type="button" id="tipBtn" value="10" onclick="tipReader()">
+                <button type="button" id="tipBtn" value="10" onclick="tipReader(this.value)">
                   10%
                 </button>
-                <button type="button" id="tipBtn" value="15"onclick="tipReader()">
+                <button type="button" id="tipBtn" value="15"onclick="tipReader(this.value)">
                   15%
                 </button>
-                <button type="button" id="tipBtn" val="25%"onclick="tipReader()">
+                <button type="button" id="tipBtn" val="25%"onclick="tipReader(this.value)">
                   25%
                 </button>
-                <button type="button" id="tipBtn" val="50"onclick="tipReader()">
+                <button type="button" id="tipBtn" val="50"onclick="tipReader(this.value)">
                   50%
                 </button>
                 <input type="number" id="tipBtn" value="0" onchange="tipReader()" placeholder="Enter value"/>
@@ -55,11 +55,11 @@
                   <span class="input-group-text" >Tip Amount<br>/person</span>
                   
                 </div>
-                <output type="number" id="tipAmount" onchange="tipReader()"  placeholder="$0.00"> 
+                <output type="number" id="tipAmount"   placeholder="$0.00"> 
                 <div class="input-group-prepend">
                   <span class="input-group-text"  >Total<br>/person</span>
                 </div>
-                <output type="number" id="totalPerson" onchange="tipReader()" placeholder="$0.00"> 
+                <output type="number" id="totalPerson"  placeholder="$0.00"> 
               
               </div>
               <button type="button" id="reset" onClick="reset()">RESET</button>
@@ -80,7 +80,7 @@
     <script>
 
       window.onClick= tipReader;
-      function tipReader(){
+      function tipReader(value){
         //Get variables
       var tipVal=parseFloat(document.getElementById("tipBtn").value);     
       var bill=parseFloat(document.getElementById("bill").value);
@@ -94,8 +94,8 @@
 
       // Outputs
       tipPerson.toFixed(2);
-      personAmount.toFixed(2);      document.getElementById("tipAmount").value=tipPerson;
-      document.getElementById("totalPerson").value=personAmount.toFixed(2);
+      personAmount.toFixed(2);      //document.getElementById("tipAmount").value=tipPerson;
+      //document.getElementById("totalPerson").value=personAmount.toFixed(2);
       console.log(tipVal,totalAmount,people,totalTip,tipPerson);         
 
       }      
